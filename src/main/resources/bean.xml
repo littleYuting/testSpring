@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 把对象的创建交给 spring 来管理-->
+    <!--spring 对bean的管理细节
+        1. 创建 bean 的三种方式
+        2. bean 对象的作用范围
+        3. bean 对象的生命周期
+    -->
+
+    <!--创建 bean 的三种方式-->
+    <!--（1） 使用默认构造函数创建：在 spring 的配置文件中使用 bean 标签，配以 id 和 class 属性之后，且没有其他属性和标签时。
+    采用的是用默认构造函数创建对象，如果没有无参的构造函数，则无法创建对象。
+       <bean id = "accountService" class = "com.cyt.service.impl.AccountServiceImpl"></bean>
+    -->
+    <!--（2） 使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入 spring 容器）
+       <bean id ="InstanceFactory" class="com.cyt.factory.InstanceFactory"></bean>
+       <bean id ="accountService" factory-bean="InstanceFactory" class="com.cyt.service.impl.AccountServiceImpl"></bean>
+    -->
+    <!--（3） 使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入 spring 容器）
+        <bean id="accountService" class="com.cyt.factory.StaticInstanceFactory" factory-method="getAccountService"></bean>
+    -->
+
+    <!--bean 的作用范围调整
+        bean 标签的 scope 属性：
+            取值：常用单例和多例的
+            singleton: 单例的（默认值）
+            prototype: 多例的
+            request: 作用于 web 应用的请求范围
+            session: 作用于 web 应用的会话范围
+            global-session: 作用于集群环境的会话范围（全局会话范围），当不是集群环境时，它就是 session
+    -->
+
+    <!-- bean 对象的生命周期【spring 框架会依据 scope 属性对单例/多例对象的初始化自动地做不同处理】
+        单例对象【与容器的生命周期相同】：
+            出生：当容器创建时对象出生
+            活着：只要容器还在，对象一直活着
+            死亡：容器销毁，对象消亡
+        多例对象【】：
+            出生：当我们使用对象时 spring 框架为我们创建
+            活着：对象只要在使用过程中就一直活着
+            消亡：当对象长时间不用，且没有别的对象引用时，由 java 的垃圾回收器回收
+    -->
+<!--    <bean id = "accountService" class = "com.cyt.service.impl.AccountServiceImpl" scope="singleton"-->
+<!--    init-method="init" destroy-method="destroy"></bean>-->
+
+    <!-- spring 中的依赖注入
+        依赖注入： Dependence Injection【对依赖关系的维护】
+        IOC 的作用：降低程序间的耦合（依赖关系）
+        spring 作为中间者对依赖关系进行管理和维护，当类之间有调用关系时，只需在配置文件中说明即可
+        依赖注入：
+            能注入的数据有三类：1）基本类型和string；2）其他 bean 类型（在配置文件中或注解配置过的 bean）；3）复杂类型/集合类型
+            注入的方式：1）使用构造函数提供；2）使用 set 方法提供；3）使用注解提供；
+    -->
+    <!--（不常用！！）构造函数的注入：
+        使用的标签：constructor-arg ，标签出现的位置： bean标签的内部
+        标签中的属性：【定位要赋值的参数】type(数据类型), index(索引), name(属性名称);
+                      value: 用于提供基本的数据类型和String类型的数据
+                       ref： 用于指定其他的bean类型数据，指的是在spring的IOC核心容器中出现过的bean对象
+        优势：在获取bean对象，注入数据是必须的操作，否则对象无法创建成功
+        弊端：改变了bean对象的实例化方式，使得在创建对象时，若无使用数据，也必须传入
+    -->
+<!--        <bean id = "accountService" class = "com.cyt.service.impl.AccountServiceImpl">-->
+<!--            <constructor-arg name="name" value="test"></constructor-arg>-->
+<!--            <constructor-arg name="age" value="18"></constructor-arg>-->
+<!--            <constructor-arg name="birthday" ref="now"></constructor-arg>-->
+<!--        </bean>-->
+        <bean id="now" class="java.util.Date"></bean>
+
+    <!-- (更常用)set 方法注入
+        涉及的标签：property,出现的位置：bean标签的内部
+        标签中的属性： name：用于指定注入时所调用的set方法名称 ;
+                      value: 用于提供基本的数据类型和String类型的数据
+                       ref： 用于指定其他的bean类型数据，指的是在spring的IOC核心容器中出现过的be
+        优势：创建对象时没有明确的限制，可以直接使用默认构造函数
+        弊端：如果有某个成员必须有值，则获取对象有可能set方法没有执行
+    -->
+    <bean id = "accountService2" class = "com.cyt.service.impl.AccountServiceImpl2">
+        <property name="name" value="cyt"></property>
+        <property name="age" value="25"></property>
+        <property name="birthday" ref="now"></property>
+    </bean>
+
+    <!--复杂类型/集合类型的注入
+        【结构相同，标签可以互换】
+        用于给 List 结构集合注入的标签： list、array、set
+        用于给 Map 结构集合注入的标签： map、properties
+    -->
+    <bean id = "accountService3" class = "com.cyt.service.impl.AccountServiceImpl3">
+        <property name="myStrs">
+            <set>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </set>
+        </property>
+        <property name="myList">
+            <array>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </array>
+        </property>
+        <property name="mySet">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+        <property name="myMap">
+            <props>
+                <prop key="c">333</prop>
+                <prop key="d">444</prop>
+            </props>
+        </property>
+        <property name="myProps">
+            <map>
+                <entry key="a" value="111"></entry>
+                <entry key="b" value="222"></entry>
+                <entry key="c" value="333"></entry>
+            </map>
+        </property>
+    </bean>
+</beans>
