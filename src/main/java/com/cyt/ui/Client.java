@@ -1,5 +1,6 @@
 package com.cyt.ui;
 
+import com.cyt.dao.IAccountDao;
 import com.cyt.service.IAccountService;
 import com.cyt.service.impl.AccountServiceImpl;
 import com.cyt.service.impl.AccountServiceImpl2;
@@ -27,11 +28,19 @@ public class Client {
         ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
 
         // 2. 根据 id 获取 bean 对象
-//        IAccountService as = (IAccountService) ac.getBean("accountService");
+        IAccountService as = (IAccountService) ac.getBean("accountService4");
+//        IAccountService as2 = (IAccountService) ac.getBean("accountService4");
+//        System.out.println(as == as2);
 //        AccountServiceImpl2 as = ac.getBean("accountService2",AccountServiceImpl2.class);
-        IAccountService as = ac.getBean("accountService3", AccountServiceImpl3.class);
-        as.saveAccount();
+//        IAccountService as = ac.getBean("accountService3", AccountServiceImpl3.class);
+        System.out.println(as);
 //        as.printService();
-//        ac.close();
+
+        IAccountDao adao1 = ac.getBean("accountDao1",IAccountDao.class);
+//        IAccountDao adao2 = ac.getBean("accountDao2",IAccountDao.class);
+        System.out.println("创建accountDao1" + adao1);
+//        System.out.println("创建accountDao1" + adao2);
+        as.saveAccount();
+        ac.close();
     }
 }

@@ -14,6 +14,10 @@ public class AccountServiceImpl3 implements IAccountService {
     private Map<String, String> myMap;
     private Properties myProps;
 
+    public AccountServiceImpl3(){
+        System.out.println("创建了一个 service3 对象");
+    }
+
     public void setMyStrs(String[] myStrs) {
         this.myStrs = myStrs;
     }

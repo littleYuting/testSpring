@@ -1,6 +1,7 @@
 package com.cyt.service.impl;
 
 import com.cyt.service.IAccountService;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 

@@ -14,7 +14,7 @@ public class AccountServiceImpl2 implements IAccountService {
     private Date birthday;
 
     public AccountServiceImpl2(){
-        System.out.println("创建了一个 service 对象");
+        System.out.println("创建了一个 service2 对象");
     }
 
     public void setName(String name) {
