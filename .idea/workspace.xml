@@ -2,47 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b72f3d-514d-497a-a2f5-88d8051cc197" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IAccountDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IAccountDao1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/AccountDaoImpl1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/AccountDaoImpl11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/AccountDaoImpl2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/Account1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/IAccountService1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/JdbcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/SpringConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/AccountServuceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IAccountDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IAccountDao1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/AccountDaoImpl1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/AccountDaoImpl11.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/AccountDaoImpl2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/domain/Account1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/IAccountService1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl11.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config/JdbcConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config/SpringConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/jdbcConfig.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/cyt/test/AccountServuceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Client$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/proxy/IProducer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Producer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/utils/ConnectionUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/utils/TransactionManager.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/testSpring_Day1/readme01.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/ui/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/ui/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bean.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bean.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/ui/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/ui/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IAccountDao1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IAccountDao1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/AccountDaoImpl11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/AccountDaoImpl11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/IProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/IProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/service/IAccountService1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/IAccountService1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/utils/ConnectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/utils/ConnectionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/utils/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/utils/TransactionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cyt/test/AccountServuceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/AccountServuceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/IAccountDao1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IAccountDao1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/AccountDaoImpl11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/AccountDaoImpl11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/service/IAccountService1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/IAccountService1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/cyt/test/AccountServuceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/cyt/test/AccountServuceTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,8 +50,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Arquillian JUnit Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -90,13 +73,13 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.cyt.test" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cyt.service.impl" />
+      <recent name="com.cyt.dao.impl" />
+      <recent name="com.cyt.factory" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.cyt.dao.impl" />
-      <recent name="com.cyt.service.impl" />
-      <recent name="com.cyt.factory" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\JavaLearing\code\test_spring_03\src\main\resources" />
@@ -114,19 +97,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AccountServuceTest.testFindAll">
-    <configuration name="AccountServuceTest.testDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cyt.proxy.Client" />
       <module name="test_spring_03" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cyt.test.*" />
+          <option name="PATTERN" value="com.cyt.proxy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.AccountServuceTest" />
-      <option name="METHOD_NAME" value="testDelete" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -179,7 +159,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServuceTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountServuceTest.testTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_spring_03" />
       <extension name="coverage">
         <pattern>
@@ -189,7 +169,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
       <option name="MAIN_CLASS_NAME" value="com.cyt.test.AccountServuceTest" />
-      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="METHOD_NAME" value="testTransfer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="JUnit.AccountServuceTest.testTransfer" />
+        <item itemvalue="JUnit.AccountServuceTest.testFindOne" />
         <item itemvalue="JUnit.AccountServuceTest.testFindAll" />
         <item itemvalue="JUnit.AccountServuceTest.testSave" />
-        <item itemvalue="JUnit.AccountServuceTest.testDelete" />
-        <item itemvalue="JUnit.AccountServuceTest.testUpdate" />
-        <item itemvalue="JUnit.AccountServuceTest.testFindOne" />
       </list>
     </recent_temporary>
   </component>
@@ -217,8 +197,17 @@
       <updated>1573111905269</updated>
       <workItem from="1573111907930" duration="14456000" />
       <workItem from="1573175397008" duration="13284000" />
-      <workItem from="1573444153382" duration="27999000" />
+      <workItem from="1573444153382" duration="28185000" />
+      <workItem from="1573522616624" duration="14804000" />
     </task>
+    <task id="LOCAL-00001" summary="2019.11.11 update,mainly try to connect with mySql using jdbc,then exceeding explain simple knowledge about annotation">
+      <created>1573478022529</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573478022529</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,5 +225,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2019.11.11 update,mainly try to connect with mySql using jdbc,then exceeding explain simple knowledge about annotation" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019.11.11 update,mainly try to connect with mySql using jdbc,then exceeding explain simple knowledge about annotation" />
   </component>
 </project>
