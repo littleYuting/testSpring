@@ -13,7 +13,7 @@ public class AccountServiceImpl11 implements IAccountService1 {
     @Autowired
     private IAccountDao1 accountDao1;
     @Autowired
-    private TransactionManager tsManager;
+    private TransactionManager tsManager;// 其引入是为了保证单个连接，维持事务一致性
 
     public void setTsManager(TransactionManager tsManager) {
         this.tsManager = tsManager;
@@ -132,7 +132,7 @@ public class AccountServiceImpl11 implements IAccountService1 {
             target.setMoney(target.getMoney()+money);
             // 2.5. 更新转出账户；
             accountDao1.updateAccount(source);
-            int i = 1/0;
+//            int i = 1/0;
             // 2.6. 更新转入账户；
             accountDao1.updateAccount(target);
             //3. 提交事务

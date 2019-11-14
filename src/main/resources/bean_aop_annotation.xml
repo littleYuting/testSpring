@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--2019.11.13 Spring Aop 注解实现-->
+
+    <!--配置spring创建容器时要扫描的包-->
+    <context:component-scan base-package="com.cyt"></context:component-scan>
+
+    <!--配置 spring 开启注解 AOP 的支持 若在代理类（eg. Logger_annotation.java）中加入注解 @EnableAspectJAutoProxy，就可以不用在 xml 中配置如下内容-->
+<!--    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
+
+    <!--以下代码是为了保证 test 可以正常运行，原因是写到现在，有好多的 bean ，其中有的 bean 是没有通过注解实现，是 xml 配置的-->
+    <bean id="proxyAccountService" factory-bean="beanFactory" factory-method="getAccountService1"></bean>
+    <bean id="beanFactory" class="com.cyt.factory.BeanFactory">
+        <property name="accountService1" ref="accountService12"></property>
+        <property name="tsManager" ref="tsManager"></property>
+    </bean>
+    <bean id="tsManager" class="com.cyt.utils.TransactionManager"></bean>
+    <bean id="accountService12" class="com.cyt.service.impl.AccountServiceImpl12_proxy">
+        <property name="accountDao1" ref="accountDao1"></property>
+    </bean>
+    <bean id="accountDao1" class="com.cyt.dao.impl.AccountDaoImpl11">
+        <property name="runner" ref="runner"></property>
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+    <bean id="connectionUtils" class="com.cyt.utils.ConnectionUtils"></bean>
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
+        <constructor-arg name="ds" ref="dataSource"></constructor-arg>
+    </bean>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/eesy"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="1234"></property>
+    </bean>
+</beans>

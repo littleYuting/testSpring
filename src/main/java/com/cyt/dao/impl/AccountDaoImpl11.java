@@ -21,6 +21,14 @@ public class AccountDaoImpl11 implements IAccountDao1 {
     @Autowired
     private ConnectionUtils connectionUtils;
 
+    public void setConnectionUtils(ConnectionUtils connectionUtils) {
+        this.connectionUtils = connectionUtils;
+    }
+
+    public void setRunner(QueryRunner runner) {
+        this.runner = runner;
+    }
+
     public Account1 findAccountByName(String accountName) {
         try{
             List<Account1> account1s = runner.query(connectionUtils.getThreadConnection(),"select * from account where name = ?", new BeanListHandler<Account1>(Account1.class), accountName);
@@ -35,10 +43,6 @@ public class AccountDaoImpl11 implements IAccountDao1 {
             throw new RuntimeException(e);
         }
     }
-
-//    public void setRunner(QueryRunner runner) {
-//        this.runner = runner;
-//    }
 
     public List<Account1> findAllAccount() {
         try{

@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -34,18 +35,15 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SpringConfiguration.class)
 public class AccountServuceTest {
+
     @Autowired
-    private IAccountService1 as = null;
+    private IAccountService1 as;
 
 //    @Before// 会报空指针异常
 //    public void init(){
 //        ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
 //        IAccountService1 as = ac.getBean("accountService11",IAccountService1.class);
 //    }
-    @Test
-    public void testTransfer(){
-        as.transfer("update","bbb",520f);
-    }
 
     @Test
     public void testFindAll() {

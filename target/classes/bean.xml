@@ -12,7 +12,7 @@
 <!--        <property name="accountDao" ref="accountDao11"></property>-->
 <!--    </bean>-->
 <!--    &lt;!&ndash; 配置 Dao 对象 &ndash;&gt;-->
-<!--    <bean id="accountDao11" class="com.cyt.dao.impl.AccountDaoImpl11">-->
+<!--    <bean id="accountDao1" class="com.cyt.dao.impl.AccountDaoImpl11">-->
 <!--        <property name="runner" ref="runner"></property>-->
 <!--    </bean>-->
     <!--[在定义了一个 config 类之后，对于 runner 和 DataSource 的 bean 配置就可省去啦]-->

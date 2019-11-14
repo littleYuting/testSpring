@@ -1,6 +1,4 @@
-package com.cyt.proxy;
-
-import java.lang.reflect.Method;
+package dynamic_proxy.proxy;
 
 public interface IProducer {
     /**

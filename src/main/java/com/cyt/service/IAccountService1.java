@@ -47,4 +47,6 @@ public interface IAccountService1 {
      */
     void transfer(String sourceName, String targetName, Float money);
 
+//    void test();//只是连接点，而不是切入点，因为没有被增强
+
 }

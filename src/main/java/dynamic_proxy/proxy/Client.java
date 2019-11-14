@@ -1,4 +1,4 @@
-package com.cyt.proxy;
+package dynamic_proxy.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

@@ -2,29 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76b72f3d-514d-497a-a2f5-88d8051cc197" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Client$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Client.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/proxy/IProducer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Producer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/utils/ConnectionUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/utils/TransactionManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testSpring_Day1/readme01.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/factory/BeanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/IAccountService2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl12_proxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl21_aop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/utils/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/utils/Logger_annotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dynamic_proxy/cglib/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dynamic_proxy/cglib/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bean_aop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bean_aop_annotation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/bean_proxy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/AopTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/ProxyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IAccountDao1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IAccountDao1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/AccountDaoImpl11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/AccountDaoImpl11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/IProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/IProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dynamic_proxy/proxy/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/IProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dynamic_proxy/proxy/IProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/proxy/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dynamic_proxy/proxy/Producer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/service/IAccountService1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/IAccountService1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/service/impl/AccountServiceImpl11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/utils/ConnectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/utils/ConnectionUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/utils/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/utils/TransactionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/bean.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/cyt/test/AccountServuceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/AccountServuceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/IAccountDao1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IAccountDao1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bean.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/AccountDaoImpl11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/AccountDaoImpl11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/service/IAccountService1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/IAccountService1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/service/impl/AccountServiceImpl11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Client$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/proxy/IProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/proxy/Producer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/cyt/test/AccountServuceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/cyt/test/AccountServuceTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,22 +74,29 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test_spring_01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.cyt.test" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.cyt.service.impl" />
-      <recent name="com.cyt.dao.impl" />
-      <recent name="com.cyt.factory" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JavaLearing\code\test_spring_03\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cyt.utils" />
+      <recent name="com.cyt.service.impl" />
+      <recent name="com.cyt.dao.impl" />
+      <recent name="com.cyt.factory" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\JavaLearing\code\test_spring_03\src\main\resources" />
+      <recent name="E:\JavaLearing\code\test_spring_03\src\main\java\dynamic_proxy\cglib" />
+      <recent name="E:\JavaLearing\code\test_spring_03\src\main\java\dynamic_proxy\proxy" />
+      <recent name="E:\JavaLearing\code\test_spring_03\src\main\java\com\cyt\cglib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -97,20 +111,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cyt.proxy.Client" />
-      <module name="test_spring_03" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cyt.proxy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.AopTest.testTransferAopAnnotation">
     <configuration name="AccountServuceTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_spring_03" />
       <extension name="coverage">
@@ -127,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServuceTest.testFindOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AopTest.testAopAnnotation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_spring_03" />
       <extension name="coverage">
         <pattern>
@@ -136,14 +137,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.AccountServuceTest" />
-      <option name="METHOD_NAME" value="testFindOne" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.AopTest" />
+      <option name="METHOD_NAME" value="testAopAnnotation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServuceTest.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AopTest.testTransferAopAnnotation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_spring_03" />
       <extension name="coverage">
         <pattern>
@@ -152,14 +153,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.AccountServuceTest" />
-      <option name="METHOD_NAME" value="testSave" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.AopTest" />
+      <option name="METHOD_NAME" value="testTransferAopAnnotation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServuceTest.testTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProxyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="test_spring_03" />
       <extension name="coverage">
         <pattern>
@@ -168,7 +169,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.AccountServuceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.ProxyTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProxyTest.testTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test_spring_03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cyt.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cyt.test" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.ProxyTest" />
       <option name="METHOD_NAME" value="testTransfer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -177,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
-        <item itemvalue="JUnit.AccountServuceTest.testTransfer" />
-        <item itemvalue="JUnit.AccountServuceTest.testFindOne" />
+        <item itemvalue="JUnit.AopTest.testTransferAopAnnotation" />
+        <item itemvalue="JUnit.AopTest.testAopAnnotation" />
+        <item itemvalue="JUnit.ProxyTest" />
+        <item itemvalue="JUnit.ProxyTest.testTransfer" />
         <item itemvalue="JUnit.AccountServuceTest.testFindAll" />
-        <item itemvalue="JUnit.AccountServuceTest.testSave" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +214,9 @@
       <workItem from="1573111907930" duration="14456000" />
       <workItem from="1573175397008" duration="13284000" />
       <workItem from="1573444153382" duration="28185000" />
-      <workItem from="1573522616624" duration="14804000" />
+      <workItem from="1573522616624" duration="30393000" />
+      <workItem from="1573629769324" duration="21540000" />
+      <workItem from="1573695127191" duration="9566000" />
     </task>
     <task id="LOCAL-00001" summary="2019.11.11 update,mainly try to connect with mySql using jdbc,then exceeding explain simple knowledge about annotation">
       <created>1573478022529</created>
@@ -207,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573478022529</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2019.11.12 update,mainly deal with the transfer between bank's Account,then tell connectionUtil; Besides start to &#10;teach Dynamic Proxy">
+      <created>1573542807456</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573542807456</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +253,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2019.11.11 update,mainly try to connect with mySql using jdbc,then exceeding explain simple knowledge about annotation" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019.11.11 update,mainly try to connect with mySql using jdbc,then exceeding explain simple knowledge about annotation" />
+    <MESSAGE value="2019.11.12 update,mainly deal with the transfer between bank's Account,then tell connectionUtil; Besides start to &#10;teach Dynamic Proxy" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019.11.12 update,mainly deal with the transfer between bank's Account,then tell connectionUtil; Besides start to &#10;teach Dynamic Proxy" />
   </component>
 </project>
