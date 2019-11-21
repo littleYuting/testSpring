@@ -3,6 +3,7 @@ package config;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.springframework.context.annotation.*;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
@@ -36,11 +37,13 @@ import javax.sql.DataSource;
  */
 @Configuration // 若在生成 ioc 容器时已传入该 config 的参数，则该注释可不写：ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
 @ComponentScan("com.cyt")
-@Import(JdbcConfig.class) // @ComponentScan({"com.cyt","config"})
+@Import({JdbcConfig.class,TransactionConfig.class}) // @ComponentScan({"com.cyt","config"})
 @PropertySource("classpath:jdbcConfig.properties")
+@EnableTransactionManagement// 开启对事务管理的支持
 public class SpringConfiguration {
 
     /**
+     *
      * 用于创建一个 QueryRunner 对象
      * @param dataSource
      * @return

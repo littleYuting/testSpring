@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+    <!--2019.11.12 动态代理 实现 银行账户转账-->
+    <!--配置代理的 service-->
+    <bean id="proxyAccountService" factory-bean="beanFactory" factory-method="getAccountService1"></bean>
+    <!--配置 beanFactory-->
+    <bean id="beanFactory" class="com.cyt.factory.BeanFactory">
+        <property name="accountService1" ref="accountService12"></property>
+        <property name="tsManager" ref="tsManager"></property>
+    </bean>
+    <bean id="tsManager" class="com.cyt.utils.TransactionManager"></bean>
+    <bean id="accountService12" class="com.cyt.service.impl.AccountServiceImpl12_proxy">
+        <property name="accountDao1" ref="accountDao1"></property>
+    </bean>
+
+    <bean id="accountDao1" class="com.cyt.dao.impl.AccountDaoImpl11">
+        <property name="runner" ref="runner"></property>
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+    <bean id="connectionUtils" class="com.cyt.utils.ConnectionUtils"></bean>
+    <!-- 配置 QueryRunner-->
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
+        <!--注入数据源-->
+        <constructor-arg name="ds" ref="dataSource"></constructor-arg>
+    </bean>
+<!--    &lt;!&ndash;配置数据源&ndash;&gt;-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <!--连接数据库的必备信息-->
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/eesy"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="1234"></property>
+    </bean>
+
+</beans>

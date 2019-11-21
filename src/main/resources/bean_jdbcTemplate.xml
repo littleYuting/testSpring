@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <!--2019.11.15 spring 中的 jdbcTemplate -->
+        <!--配置 AccountDao12-->
+        <bean id="accountDao12" class="com.cyt.dao.impl.AccountDaoImpl12">
+<!--                <property name="jt" ref="jdbcTemplate"></property>-->
+                <property name="dataSource" ref="dataSource"></property>
+        </bean>
+        <!--配置 springTemplate-->
+        <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+                <property name="dataSource" ref="dataSource"></property>
+        </bean>
+        <!--配置数据源-->
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/eesy"></property>
+                <property name="username" value="root"></property>
+                <property name="password" value="1234"></property>
+        </bean>
+</beans>

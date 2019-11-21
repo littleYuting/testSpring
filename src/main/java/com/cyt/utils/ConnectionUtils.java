@@ -21,6 +21,10 @@ public class ConnectionUtils {
     @Autowired
     private DataSource dataSource;
 
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     public Connection getThreadConnection(){
         try{
             //1. 先从ThreadLocal上获取

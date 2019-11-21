@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.cyt"></context:component-scan>
+    <!--2019.11.16 配置 transfer 的 AOP 配置-->
+
+    <!--配置spring的ioc，把service对象配置进来-->
+<!--    <bean id="accountService" class="com.cyt.service.impl.AccountServiceImpl12_proxy">-->
+<!--        <property name="accountDao1" ref="accountDao1"></property>-->
+<!--    </bean>-->
+<!--    <bean id="accountDao1" class="com.cyt.dao.impl.AccountDaoImpl11">-->
+<!--        <property name="runner" ref="runner"></property>-->
+<!--        <property name="connectionUtils" ref="connectionUtils"></property>-->
+<!--    </bean>-->
+
+    <!--配置 TransactionManager 类-->
+    <bean id="txManager" class="com.cyt.utils.TransactionManager">
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+
+    <bean id="connectionUtils" class="com.cyt.utils.ConnectionUtils">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
+        <constructor-arg name="ds" ref="dataSource"></constructor-arg>
+    </bean>
+    <!--配置数据源-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/eesy"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="1234"></property>
+    </bean>
+    <!--配置AOP-->
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="pt1" expression="execution(* com.cyt.service.impl.*.*(..))"/>-->
+<!--        &lt;!&ndash;配置切面&ndash;&gt;-->
+<!--        <aop:aspect id="txManager" ref="txManager">-->
+<!--            <aop:before method="beginConnection" pointcut-ref="pt1"></aop:before>-->
+<!--            <aop:after-returning method="commit" pointcut-ref="pt1"></aop:after-returning>-->
+<!--            <aop:after-throwing method="rollback" pointcut-ref="pt1"></aop:after-throwing>-->
+<!--            <aop:after method="release" pointcut-ref="pt1"></aop:after>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+    <!-- 2019.11.18 spring 中基于注解的声明式事务控制配置步骤
+        1. 配置事务管理器
+        2. 开启 spring 对注解事务的支持
+        3. 在需要的地方加上 @Transactional
+    -->
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!-- 开启 spring 对注解事务的支持 -->
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+
+<!--    &lt;!&ndash;2019.11.18 spring 中基于 XNL 的声明式事务控制配置步骤-->
+<!--        1. 配置事务管理器-->
+<!--        2. 配置事务的通知-->
+<!--            此时需导入事务的约束 tx 名称空间和约束，同时也需要 aop 的-->
+<!--            使用 tx:advice 标签配置事务通知-->
+<!--                属性：-->
+<!--                    id：给事务通知起一个唯一标志-->
+<!--                    transaction-manager：给事务通知提供一个事务管理器引用-->
+<!--        3. 配置 AOP 中的通用切入点表达式-->
+<!--        4. 建立事务通知和切入点表达式的对应关系-->
+<!--        5. 配置事务的属性-->
+<!--            是在事务的通知 tx:advice 标签的内部-->
+<!--    &ndash;&gt;-->
+<!--    &lt;!&ndash; 配置事务管理器 &ndash;&gt;-->
+<!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+<!--        <property name="dataSource" ref="dataSource"></property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; 配置事务的通知 &ndash;&gt;-->
+<!--    <tx:advice id="txAdvice" transaction-manager="transactionManager">-->
+<!--        &lt;!&ndash; 配置事务的属性-->
+<!--            isolation：用于指定事务的隔离级别，默认值是default，表示使用数据库的默认隔离级别-->
+<!--            no-rollback-for：用于指定一个异常，当产生该异常时，事务回滚，产生其他异常，事务不回滚，无默认值，表示任何异常都回滚-->
+<!--            propagation：用于指定事务的传播行为，默认值是 required，表示一定会有事务，增删改的选择，查询方法可以选择 supports-->
+<!--            read-only：用于指定事务是否只读，只有查询方法才能设置为 true，默认值是 false，表示读写-->
+<!--            rollback-for：用于指定一个异常，当产生该异常时，事务不回滚，产生其他异常，事务回滚，无默认值，表示任何异常都回滚-->
+<!--            timeout：用于指定事务的超时时间，默认值是-1，表示永不超时,如果指定了数值，以秒为单位-->
+<!--        &ndash;&gt;-->
+<!--        <tx:attributes>-->
+<!--            <tx:method name="*" propagation="REQUIRED" read-only="false"/>-->
+<!--            <tx:method name="find" propagation="SUPPORTS" read-only="true"></tx:method>-->
+<!--        </tx:attributes>-->
+<!--    </tx:advice>-->
+
+<!--    &lt;!&ndash; 配置 AOP &ndash;&gt;-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash; 配置切入点表达式 &ndash;&gt;-->
+<!--        <aop:pointcut id="pt1" expression="execution(* com.cyt.service.impl.*.*(..))"/>-->
+<!--        &lt;!&ndash; 建立切入点表达式和事务通知的对应关系&ndash;&gt;-->
+<!--        <aop:advisor advice-ref="txAdvice" pointcut-ref="pt1"></aop:advisor>-->
+<!--    </aop:config>-->
+
+</beans>

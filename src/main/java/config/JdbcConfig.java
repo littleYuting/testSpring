@@ -1,11 +1,13 @@
 package config;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.mchange.v2.c3p0.DriverManagerDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 
@@ -53,5 +55,20 @@ public class JdbcConfig {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Bean(name="jdbcTemplate")
+    public JdbcTemplate createJdbcTemplate(DataSource dataSource){
+        return new JdbcTemplate(dataSource);
+    }
+
+    @Bean(name="dataSource_DM")
+    public DataSource createDataSource_DM(){
+        DriverManagerDataSource ds = new DriverManagerDataSource();
+        ds.setDriverClass(driver);
+        ds.setJdbcUrl(url);
+        ds.setUser(user);
+        ds.setPassword(password);
+        return ds;
     }
 }

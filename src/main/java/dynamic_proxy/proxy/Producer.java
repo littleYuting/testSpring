@@ -1,4 +1,4 @@
-package com.cyt.proxy;
+package dynamic_proxy.proxy;
 
 /**
  * 一个生产者
@@ -9,7 +9,7 @@ package com.cyt.proxy;
  * 答：JDK 动态代理的原理就是根据定义好的规则，用传入的接口创建一个新类
  */
 
-public class Producer implements IProducer{
+public class Producer implements IProducer {
 
     /**
      * 销售

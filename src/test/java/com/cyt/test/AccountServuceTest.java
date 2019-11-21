@@ -2,6 +2,7 @@ package com.cyt.test;
 
 import com.cyt.domain.Account1;
 import com.cyt.service.IAccountService1;
+import com.cyt.service.IAccountService2;
 import config.SpringConfiguration;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import java.util.List;
 
@@ -34,16 +36,33 @@ import java.util.List;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SpringConfiguration.class)
+//@ContextConfiguration(locations = "classpath:bean_transfer_aop.xml")
 public class AccountServuceTest {
 
-    @Autowired
     private IAccountService1 as;
+    @Autowired
+    private IAccountService1 accountService12;
 
 //    @Before// 会报空指针异常
 //    public void init(){
 //        ApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
 //        IAccountService1 as = ac.getBean("accountService11",IAccountService1.class);
 //    }
+
+    @Test
+    public void testTransfer(){
+        accountService12.transfer("ddd", "aaa", 100f);
+    }
+
+    /**
+     * 使用 ClassPathXmlApplicationContext 获得 ioc 容器
+     * @param args
+     */
+    public static void main(String[] args) {
+        ApplicationContext ac = new ClassPathXmlApplicationContext("bean_transfer_aop.xml");
+        IAccountService1 as = ac.getBean("accountService",IAccountService1.class);
+        as.transfer("ddd", "aaa", 100f);
+    }
 
     @Test
     public void testFindAll() {

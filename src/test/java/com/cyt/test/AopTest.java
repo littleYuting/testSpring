@@ -31,7 +31,7 @@ public class AopTest {
 
     @Test
     public void testTransferAopAnnotation(){
-        // 此测试是在学习了aop的基本知识之后，自己练习实现之前的银行账户转账，之前是用基于接口的动态代理方法实现的， Proxy 类
+        // 此测试是在学习了aop的基本知识之后，自己练习实现之前的银行账户转账，之前是用基于类的动态代理方法实现的， Proxy 类
         accountService11.transfer("bbb", "update", 100f);
     }
     /**
